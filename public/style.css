@@ -1,0 +1,24 @@
+/* body {
+    background-color: red !important;
+} */
+
+.form-group {
+    text-align: center;
+}
+[class*="col-"] {
+    padding-top:10px;
+    padding-bottom:15px;
+	border:1px solid #80aa00;
+	background:#d6ec94;
+    right: inherit;
+}
+[class*="col-"]:before {
+    display:block;position:relative;
+    content:"INFORMATION";
+    margin-bottom:8px;
+	font-family:sans-serif;
+	font-size:10px;
+    letter-spacing:1px;
+    color:#658600;
+    text-align:left;
+}
