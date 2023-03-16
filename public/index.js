@@ -17,10 +17,10 @@ function info() {
             nameArray = array[item].split(" ");
             fnm += nameArray[0] + "<br>";
             lnm += nameArray[1] + "<br>";
-            itemList += ambot + "<br>";
+            itemList += ( item + 1 )+ "<br>";
             console.log(item);
             // console.log(fnm);
-            // console.log(lnm);
+            // console.log(lnm);    
 
         }
         resetInputField(['lname','fname']);
@@ -34,43 +34,23 @@ function resetInputField(txtFields){ // []
         document.getElementById(txtFields[item]).value = '';
     }
 }
-var resultD;
-var firstNumber, secondNumber;
-function calc() { 
-    firstNumber  = document.getElementById("fnumber").value;
-    secondNumber  = document.getElementById("snumber").value;
+
+function outcome() { 
+    var firstNumber = Number(document.getElementById("fnumber").value);
+    var seconNumber = Number(document.getElementById("snumber").value);
+    var total = 0;
     
-    if (firstNumber == "" || secondNumber == ""){
-        alert("Hoy! All fields are required");  
-    } else {
-        console.log("Success");
-        
-
+    if (document.getElementById("addition").checked){
+        total = firstNumber + seconNumber;
     }
-}
-
-
-// function addNum(){
-            
-//     calc();
-//     resultD = firstNumber+secondNumber;
-//     document.getElementById("resultDisplay").innerHTML = resultD;
-// }
-
-// function minusNum(){
-// calc();
-// resultD = firstNumber-secondNumber;
-// document.getElementById("resultDisplay").innerHTML = resultD;
-// }
-// function multiplyNum(){
-// calc();
-// resultD = firstNumber*secondNumber;
-// document.getElementById("resultDisplay").innerHTML = resultD;
-// }
-// function divideNum(){
-// calc();
-// resultD = firstNumber/secondNumber;
-// document.getElementById("resultDisplay").innerHTML = resultD;
-// }
-
-
+    else if (document.getElementById("subtraction").checked){ 
+        total = firstNumber - seconNumber;
+    }
+    else if (document.getElementById("multiplication").checked){
+        total = firstNumber * seconNumber;
+    }
+    else{
+        total = firstNumber / seconNumber;
+    }
+    document.getElementById("resultArea").innerHTML = total; 
+} 
